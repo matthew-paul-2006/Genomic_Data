@@ -30,6 +30,7 @@ output:
 - BED (Genomic Intervals).
 - GFF/GTF (Gene annotation).
 - Wiggle files, BEDgraphs and BigWigs (Genomic scores).
+- VCF and MAF (Genomic variations).
 
 ---
 class: inverse, center, middle
@@ -351,6 +352,39 @@ class: inverse, center, middle
 - PARENT- Meta-feature name.
 
 ---
+
+## Genomic Variants
+- Variant Call Format (VCF)
+- Mutation Annotation Format (MAF)
+
+---
+## Variant Call Format
+Variant Call Format ([VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)) is a text file format (most likely stored in a compressed manner). It contains 
+
+- meta-information lines
+- a header line
+- data lines each containing information about a position in the genome 
+
+***The format also has the ability to contain genotype information on samples for each position***.
+
+---
+## VCF Structure
+<div align="center">
+<img src="imgs/Picture1.png" alt="datasetSource" height="460" width="900">
+</div>
+
+---
+
+## Mutation Annotation Format (MAF)
+Mutation Annotation Format ([MAF](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/)) is a tab-delimited text file with aggregated **mutation information** from VCF files.
+
+---
+## MAF Structure
+<div align="center">
+<img src="imgs/Picture2.png" alt="datasetSource" height="300" width="800">
+</div>
+
+---
 class: inverse, center, middle
 
 # Genomic Files for computing .
@@ -364,6 +398,8 @@ class: inverse, center, middle
     - Wiggle and bedGraph -> bigWig (.bw/.bigWig)
     - BED -> bigBed (.bb)
     - BED, VCF and GFF -> (.gz and index file of .tbi)
+
+
  
 ---
 ## Getting help and more information
