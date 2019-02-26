@@ -17,33 +17,81 @@ output:
     number_sections: false  ## if you want number sections at each table header
     theme: united  # many options for theme, this one is my favorite.
     highlight: tango  # specifies the syntax highlighting style
+params:
+  isSlides: "no"
 
 
 
 ---
 
 
-```{r setup_ggplot2, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-AsSlides <- TRUE
+
+```{r,include=FALSE}
+suppressPackageStartupMessages(require(knitr))
 ```
 
 
-## Getting hold of HTS data
+```{r,results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("---
+class: inverse, center, middle
+
+# Genomics Data Repositories
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+"    
+  )
+}else{
+  cat("---
+
+# Genomics Data Repositories
+
+---
+"    
+  )
+  
+}
+```
+
+
+
+
+### Getting hold of HTS data
 - From public repositories
 - From collaborators
 - By sequencing some of your own material!
 
 
 
----
+
+```{r,results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("---
 class: inverse, center, middle
 
 # Repositories for HTS
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-## Public Repositories for HTS
+"    
+  )
+}else{
+  cat("---
+
+## Repositories for HTS
+
+---
+"    
+  )
+  
+}
+```
+
+
+### Public Repositories for HTS
 
 - Several public sources of HTS data exist.
 - First concentrating on those acting as repositories.
@@ -54,7 +102,7 @@ class: inverse, center, middle
 
 ---
 
-## Gene Expression Omnibus
+### Gene Expression Omnibus
 
 - GEO (https://www.ncbi.nlm.nih.gov/geo/)
 
@@ -71,7 +119,7 @@ class: inverse, center, middle
 
 ---
 
-## Gene Expression Omnibus
+### Gene Expression Omnibus
 
 - GEO (https://www.ncbi.nlm.nih.gov/geo/)
 
@@ -79,7 +127,7 @@ class: inverse, center, middle
 
 ---
 
-## Short Read Archive
+### Short Read Archive
 
 - SRA (www.ncbi.nlm.nih.gov/sra)
 
@@ -96,7 +144,7 @@ class: inverse, center, middle
 
 ---
 
-## Short Read Archive
+### Short Read Archive
 
 - SRA (www.ncbi.nlm.nih.gov/sra)
 
@@ -104,7 +152,7 @@ class: inverse, center, middle
 
 ---
 
-## European Nucleotide Archive
+### European Nucleotide Archive
 
 - ENA (https://www.ebi.ac.uk/ena)
 
@@ -121,7 +169,7 @@ class: inverse, center, middle
 
 ---
 
-## European Nucleotide Archive
+### European Nucleotide Archive
 
 - ENA (https://www.ebi.ac.uk/ena)
 
@@ -131,7 +179,7 @@ class: inverse, center, middle
 
 ---
 
-## Other Repositories
+### Other Repositories
 .pull-left[
 <img src="imgs/encode.png" alt="igv" height="500" width="400">
 
@@ -147,7 +195,7 @@ class: inverse, center, middle
 
 ---
 
-## Encode Portal
+### Encode Portal
 
 Encode portal provides access to raw and processed/standardised results.
 
@@ -155,7 +203,7 @@ Encode portal provides access to raw and processed/standardised results.
 
 ---
 
-## Repositories for processed data
+### Repositories for processed data
 
 .pull-left[
 <img src="imgs/recount2.png" alt="igv" height="300" width="400">
@@ -170,7 +218,7 @@ Encode portal provides access to raw and processed/standardised results.
 
 ---
 
-##  Reference data
+###  Reference data
 - Reference Genome available from many locations.
 - Different assemblies
     - Major Revisisons - Change locations
