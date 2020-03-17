@@ -28,6 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 AsSlides <- TRUE
 ```
 
+# Data Repositories
 
 ## Getting hold of HTS data
 - From public repositories
