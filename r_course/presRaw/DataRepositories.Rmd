@@ -31,8 +31,8 @@ AsSlides <- TRUE
 # Data Repositories
 
 ## Getting hold of HTS data
-- From public repositories
-- From collaborators
+- From public repositories.
+- From collaborators.
 - By sequencing some of your own material!
 
 
@@ -48,9 +48,9 @@ class: inverse, center, middle
 
 - Several public sources of HTS data exist.
 - First concentrating on those acting as repositories.
-    - GEO (Gene Expression Omnibus)
-    - ENA (European Nucleotide Database)
-    - SRA (Short Read Archive)
+    - GEO (Gene Expression Omnibus).
+    - ENA (European Nucleotide Database).
+    - SRA (Short Read Archive).
 
 
 ---
@@ -61,13 +61,13 @@ class: inverse, center, middle
 
 .pull-left[
 <img src="imgs/geo.png" alt="igv" height="300" width="400">
-]
+  ]
 .pull-right[
 - GEO holds different types of biological datasets.
 - Very popular for submission of data accompanying publication.
 - Captures metadata,  processed files and raw data.
-- GEO was not built for HTS data 
-]
+- GEO was not built for HTS data.
+  ]
 
 
 ---
@@ -86,13 +86,13 @@ class: inverse, center, middle
 
 .pull-left[
 <img src="imgs/sra.png" alt="igv" height="300" width="400">
-]
+  ]
 .pull-right[
 - NCBI's HTS specific repository.
 - Sequencing specific metadata.
 - Stores Raw data (in SRA format)
 - SRA format - requires SRA Toolkit
-]
+  ]
 
 
 ---
@@ -111,13 +111,13 @@ class: inverse, center, middle
 
 .pull-left[
 <img src="imgs/ena.png" alt="igv" height="300" width="400">
-]
+  ]
 .pull-right[
 - ENA acts as a european HTS repository.
 - Mirrors much of SRA.
 - Stores Raw data
 - No SRA formats - fastq by default.
-]
+  ]
 
 
 ---
@@ -125,7 +125,6 @@ class: inverse, center, middle
 ## European Nucleotide Archive
 
 - ENA (https://www.ebi.ac.uk/ena)
-
 
 <iframe width="100%" height= "80%" src="https://www.ebi.ac.uk/ena"></iframe>
 
