@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # Genomics Data Repositories
 ### Rockefeller University, Bioinformatics Resource Centre
-### <a href="http://rockefelleruniversity.github.io/Plotting_In_R/" class="uri">http://rockefelleruniversity.github.io/Plotting_In_R/</a>
+### <a href="https://rockefelleruniversity.github.io/Genomic_Data/" class="uri">https://rockefelleruniversity.github.io/Genomic_Data/</a>
 
 ---
 
@@ -22,10 +22,12 @@ class: center, middle, inverse, title-slide
 
 
 
+# Data Repositories
 
+---
 ## Getting hold of HTS data
-- From public repositories
-- From collaborators
+- From public repositories.
+- From collaborators.
 - By sequencing some of your own material!
 
 
@@ -41,9 +43,9 @@ class: inverse, center, middle
 
 - Several public sources of HTS data exist.
 - First concentrating on those acting as repositories.
-    - GEO (Gene Expression Omnibus)
-    - ENA (European Nucleotide Database)
-    - SRA (Short Read Archive)
+    - GEO (Gene Expression Omnibus).
+    - ENA (European Nucleotide Database).
+    - SRA (Short Read Archive).
 
 
 ---
@@ -54,13 +56,13 @@ class: inverse, center, middle
 
 .pull-left[
 &lt;img src="imgs/geo.png" alt="igv" height="300" width="400"&gt;
-]
+  ]
 .pull-right[
 - GEO holds different types of biological datasets.
 - Very popular for submission of data accompanying publication.
 - Captures metadata,  processed files and raw data.
-- GEO was not built for HTS data 
-]
+- GEO was not built for HTS data.
+  ]
 
 
 ---
@@ -79,13 +81,13 @@ class: inverse, center, middle
 
 .pull-left[
 &lt;img src="imgs/sra.png" alt="igv" height="300" width="400"&gt;
-]
+  ]
 .pull-right[
 - NCBI's HTS specific repository.
 - Sequencing specific metadata.
 - Stores Raw data (in SRA format)
 - SRA format - requires SRA Toolkit
-]
+  ]
 
 
 ---
@@ -104,23 +106,22 @@ class: inverse, center, middle
 
 .pull-left[
 &lt;img src="imgs/ena.png" alt="igv" height="300" width="400"&gt;
-]
+  ]
 .pull-right[
 - ENA acts as a european HTS repository.
 - Mirrors much of SRA.
 - Stores Raw data
 - No SRA formats - fastq by default.
-]
+  ]
 
 
----
+&lt;!-- --- --&gt;
 
-## European Nucleotide Archive
+&lt;!-- ## European Nucleotide Archive --&gt;
 
-- ENA (https://www.ebi.ac.uk/ena)
+&lt;!-- - ENA (https://www.ebi.ac.uk/ena) --&gt;
 
-
-&lt;iframe width="100%" height= "80%" src="https://www.ebi.ac.uk/ena"&gt;&lt;/iframe&gt;
+&lt;!-- &lt;iframe width="100%" height= "80%" src="https://www.ebi.ac.uk/ena/browser/home"&gt;&lt;/iframe&gt; --&gt;
 
 
 ---
@@ -128,22 +129,22 @@ class: inverse, center, middle
 ## Other Repositories
 .pull-left[
 &lt;img src="imgs/encode.png" alt="igv" height="500" width="400"&gt;
-
-]
+  ]
+  
 .pull-right[
 - Many repositories contain processed or unprocessed data.
 - These typically are the result or a consortium's data release policies.
-- Good example is Encode site. 
+- Good example is ENCODE site. 
     - (https://www.encodeproject.org/)
 - UCSC has many useful links to genomics data in various formats.
     - (http://hgdownload.soe.ucsc.edu/downloads.html)
-]
+  ]
 
 ---
 
-## Encode Portal
+## ENCODE Portal
 
-Encode portal provides access to raw and processed/standardised results.
+ENCODE portal provides access to raw and processed/standardised results.
 
 &lt;iframe width="100%" height= "80%" src="https://www.encodeproject.org"&gt;&lt;/iframe&gt;
 
@@ -155,20 +156,20 @@ Encode portal provides access to raw and processed/standardised results.
 &lt;img src="imgs/recount2.png" alt="igv" height="300" width="400"&gt;
 &lt;img src="imgs/ExprAtlas.png" alt="igv" height="300" width="400"&gt;
 
-]
+  ]
 .pull-right[
 - Other specialist repositories exist.
 - [ReCount2](https://jhubiostatistics.shinyapps.io/recount/) database provides standardised counts for user analysis.
 - Other databases like Immgen/Bodymap/[expression atlas](https://www.ebi.ac.uk/gxa/home) provide RNAseq for specific cells/tissues.
-]
+  ]
 
 ---
 
 ##  Reference data
 - Reference Genome available from many locations.
-- Different assemblies
-    - Major Revisisons - Change locations
-    - Minor Revisions - Update annotation
+- Different assemblies.
+    - Major Revisisons - Change locations.
+    - Minor Revisions - Update annotation.
 - Genome sequence stored as FASTA.
 - Gene build as GFF3 or GTF.
 - [IGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html) contains full annotation files for many genomes.
@@ -221,30 +222,20 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 })();
 (function() {
   "use strict"
-  /* Replace <script> tags in slides area to make them executable
-   *
-   * Runs after post-processing of markdown source into slides and replaces only
-   * <script>s on the last slide of continued slides using the .has-continuation
-   * class added by xaringan. Finally, any <script>s in the slides area that
-   * aren't executed are commented out.
-   */
+  // Replace <script> tags in slides area to make them executable
   var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+    '.remark-slides-area .remark-slide-container script'
   );
   if (!scripts.length) return;
   for (var i = 0; i < scripts.length; i++) {
     var s = document.createElement('script');
     var code = document.createTextNode(scripts[i].textContent);
     s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
     scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-  var scriptsNotExecuted = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container.has-continuation script'
-  );
-  if (!scriptsNotExecuted.length) return;
-  for (var i = 0; i < scriptsNotExecuted.length; i++) {
-    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
-    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
   }
 })();
 (function() {

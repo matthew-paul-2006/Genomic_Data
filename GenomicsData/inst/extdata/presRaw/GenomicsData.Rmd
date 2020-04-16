@@ -1,7 +1,7 @@
 ---
 title: "Reference Genomes and Common Genomics File Formats"
 author: "Rockefeller University, Bioinformatics Resource Centre"
-date: "http://rockefelleruniversity.github.io/Plotting_In_R/"
+date: "https://rockefelleruniversity.github.io/Genomic_Data/"
 output: 
   xaringan::moon_reader:
     css: ["default", "metropolisCustom.css", "metropolis-fontsCustom.css"]
@@ -17,52 +17,13 @@ output:
     number_sections: false  ## if you want number sections at each table header
     theme: united  # many options for theme, this one is my favorite.
     highlight: tango  # specifies the syntax highlighting style
-params:
-  isSlides: "no"
-
-
 ---
 
 
-
-
-```{r,include=FALSE}
-suppressPackageStartupMessages(require(knitr))
-```
-
-
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
-class: inverse, center, middle
-
-# Reference Genomes and Common Genomics File Formats
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+# Genomics Data
 
 ---
-"    
-  )
-}else{
-  cat("---
-
-# Reference Genomes and Common Genomics File Formats
-
----
-"    
-  )
-  
-}
-```
-
-
-
-
-
-
-
-
-### Overview
+## Overview
 
 - Reference genomes and GRC.
 - Fasta and FastQ (Unaligned sequences).
@@ -72,31 +33,14 @@ class: inverse, center, middle
 - Wiggle files, BEDgraphs and BigWigs (Genomic scores).
 - VCF and MAF (Genomic variations).
 
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
+---
 class: inverse, center, middle
 
 # Reference Genomes
-
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-"    
-  )
-}else{
-  cat("---
-
-## Reference Genomes
-
----
-"    
-  )
-  
-}
-```
-
-### Are there we there yet?
+## Are we there yet?
 
 - The human genome isnt complete! 
 - In fact, most model organisms's reference genomes are being regularly updated.
@@ -104,12 +48,12 @@ class: inverse, center, middle
 - Major revisions to assembies result in change of co-ordinates.
 - Requires conversion between revisions.
 - The latest genome assembly for humans is GRCh38.
-- Patches add information to the assembly without disrupting the chromosome coordinates . i.e GRCh38.p3
+- Patches add information to the assembly without disrupting the chromosome coordinates i.e GRCh38.p3
 
 ---
-### Genome Reference Consortium.
+## Genome Reference Consortium
 
-- GRC is collaboration of institutes which curate and maintain the reference genomes for 3 model organims.
+- GRC is collaboration of institutes which curate and maintain the reference genomes for 3 model organisms.
     - Human - GRCh38.p3
     - Mouse - GRCm38.p3
     - Zebrafish - GRCz10
@@ -117,19 +61,19 @@ class: inverse, center, middle
     - Drosophila - Berkeley Drosophila Genome Project, BDGP36
 
 ---
-### Why do we need to know about reference genomes
+## Why do we need reference genomes?
 - Allows for genes and genomic features to be evaluated in their linear genomic context.
     - Gene A is close to Gene B
     - Gene A and Gene B are within feature C.
 - Can be used to align shallow targeted high-thoughput sequencing to a pre-built map of an organisms genome.
 
 ---
-### Aligning to a reference genomes
+## Aligning to a reference genomes
 
 ![](imgs/alignToRef.png)
 
 ---
-### A reference genome
+## A reference genome
 
 - A reference genome is a collection of contigs.
 - A contig is a stretch of DNA sequence encoded as A,G,C,T,N.
@@ -142,39 +86,21 @@ class: inverse, center, middle
 </div>
 
 
-
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
+---
 class: inverse, center, middle
 
 # High-throughput Sequencing formats
-
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-"    
-  )
-}else{
-  cat("---
-
 ## High-throughput Sequencing formats
-
----
-"    
-  )
-  
-}
-```
-
-### High-throughput Sequencing formats
 
 - Unaligned sequence files generated from HTS machines are mapped to a reference genome to produce aligned sequence files.
     - FASTQ - Unaligned sequences 
     - SAM - Aligned sequences
 
 ---
-### Unaligned Sequences
+## Unaligned Sequences
  **FastQ (FASTA with Qualities)**
 <div align="center">
 <img src="imgs/fq1.png" alt="igv" height="200" width="800">
@@ -186,7 +112,7 @@ class: inverse, center, middle
 - Quality scores encodes as ASCI.
 
 ---
-### Unaligned Sequences
+## Unaligned Sequences
  **FastQ - Header**
  <div align="center">
 <img src="imgs/fq2.png" alt="igv" height="200" width="800">
@@ -197,7 +123,7 @@ class: inverse, center, middle
     - /1 - Read 1 or 2 of pair (here read 1)
     
 ---
-### Unaligned Sequences
+## Unaligned Sequences
  **FastQ - Qualities**
  <div align="center">
 <img src="imgs/fq3.png" alt="igv" height="200" width="800">
@@ -209,7 +135,7 @@ class: inverse, center, middle
 - Used in quality assessment and downstream analysis
  
 ---
-### Aligned sequences
+## Aligned sequences
 **SAM format**
 
 - SAM - Sequence Alignment Map.
@@ -217,22 +143,22 @@ class: inverse, center, middle
 - Recognised by majority of software and browsers. 
 
 ---
-### Aligned sequences
+## Aligned sequences
 **SAM header**
 
 .pull-left[
  <div align="center">
 <img src="imgs/sam1.png" alt="igv" height="400" width="400">
 </div>
-]
+  ]
 .pull-right[
 - SAM header contains information on alignment and contigs used.
     - @HD - Version number and sorting information
     - @SQ - Contig/Chromosome name and length of sequence.
-]
+  ]
 ---
 
-### Aligned sequences
+## Aligned sequences
 **SAM - Aligned reads** 
 
 <div align="center">
@@ -243,7 +169,7 @@ class: inverse, center, middle
 
 ---
 
-### Aligned sequences
+## Aligned sequences
 **SAM - Aligned reads** 
 
 <div align="center">
@@ -255,7 +181,7 @@ class: inverse, center, middle
 - Encoded sequence quality.
 ---
 
-### Aligned sequences
+## Aligned sequences
 **SAM - Aligned reads** 
 
 <div align="center">
@@ -270,7 +196,7 @@ class: inverse, center, middle
 
 ---
 
-### Aligned sequences
+## Aligned sequences
 **SAM - Aligned reads** 
 
 <div align="center">
@@ -284,38 +210,18 @@ class: inverse, center, middle
 - User defined flags.
 
 
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
-class: inverse, center, middle
-
-# Summarised Genomic Features formats
-
+# Summarised Genomic Features formats.
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-"    
-  )
-}else{
-  cat("---
-
 ## Summarised Genomic Features formats
-
----
-"    
-  )
-  
-}
-```
-
-### Summarised Genomic Features formats
 - Post alignment, sequences reads are typically summarised into scores over/within genomic intervals.
     - BED - Genomic intervals and information.
     - Wiggle/BedGraph - Genomic intervals and scores.
-    - GFF - Genomic annotation with information and scores
+    - GFF - Genomic annotation with information and scores.
 
 ---
-### Summarising in genomic intervals.
+## Summarising in genomic intervals
 
 ** BED format (BED) **
 
@@ -323,12 +229,12 @@ class: inverse, center, middle
 <img src="imgs/BED3.png" alt="igv" height="200" width="400">
 </div>
 
-- Simple format
-- 3 tab separated columns
-- Chromsome, start, end
+- Simple format.
+- 3 tab separated columns.
+- Chromsome, start, end.
 
 ---
-### Summarising in genomic intervals.
+## Summarising in genomic intervals
 
 ** BED format (BED6) **
 
@@ -336,23 +242,23 @@ class: inverse, center, middle
 <img src="imgs/bed6.png" alt="igv" height="200" width="400">
 </div>
 
-- Chromosome, start, end
-- Identifier
-- Score
-- Strand ("." for strandless)
+- Chromosome, start, end.
+- Identifier.
+- Score.
+- Strand ("." for strandless).
  
 
 ---
-### Summarising in genomic intervals.
+## Summarising in genomic intervals
 ** narrowPeak and broadPeak**
 
 - narrowPeak and broadPeak are extensions to BED6 used in Encode's peak calling.
 - Contains p-values, q-values.
-- narrowPeak - BED 6+4
-- broadPeak - BED6+3
+- narrowPeak - BED 6+4.
+- broadPeak - BED6+3.
 
 ---
-### Signal at genomic positions
+## Signal at genomic positions
 
 - Common practice to review signal over genome.
 - Special formats exist for this
@@ -360,23 +266,23 @@ class: inverse, center, middle
     - bedGraph
 
 ---
-### Signal at genomic positions
+## Signal at genomic positions
 
 .pull-left[
  <div align="center">
 <img src="imgs/wiggle.png" alt="igv" height="400" width="400">
 </div>
-]
+  ]
 .pull-right[
-- Information line
-    - Chromosome
-    - Step size
-- Step start position
-- Score
-]
+- Information line.
+    - Chromosome.
+    - Step size.
+- Step start position.
+- Score.
+  ]
 
 ---
-### Signal at genomic positions
+## Signal at genomic positions
 
 **bedGraph**
 
@@ -384,44 +290,25 @@ class: inverse, center, middle
  <div align="center">
 <img src="imgs/bedgraph3.png" alt="igv" height="250" width="400">
 </div>
-]
+  ]
 .pull-right[
 - BED 3 format
     - Chromosome
     - Start 
     - End
 4th column - Score
-]
+  ]
 
-
-
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
+---
 class: inverse, center, middle
 
-# Genomic Annotation
-
+# Genomic Annotation.
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-"    
-  )
-}else{
-  cat("---
-
 ## Genomic Annotation
 
----
-"    
-  )
-  
-}
-```
-
-### Genomic Annotation
-
-**GFF**
+**GFF: General Feature Format**
 
  <div align="center">
 <img src="imgs/gff.png" alt="igv" height="150" width="700">
@@ -431,100 +318,80 @@ class: inverse, center, middle
 - Stores position, feature (exon) and meta-feature (transcript/gene) information.
 
 ---
-### Genomic Annotation
+## Genomic Annotation
 
 <div align="center">
 <img src="imgs/gff2.png" alt="igv" height="150" width="700">
 </div>
 
-- Chromosome
-- Start of feature
-- End of Feature
-- Strand
+- Chromosome.
+- Start of feature.
+- End of Feature.
+- Strand.
 
 ---
-### Genomic Annotation
+## Genomic Annotation
 
 <div align="center">
 <img src="imgs/gff3.png" alt="igv" height="150" width="700">
 </div>
 
-- Source
-- Feature type
-- Score
+- Source.
+- Feature type.
+- Score.
 
 ---
-### Genomic Annotation
+## Genomic Annotation
 
 <div align="center">
 <img src="imgs/gff4.png" alt="igv" height="150" width="700">
 </div>
 
-- Column 9 contains key pairs (ID=exon01), separated by semi-colons ";"
+- Column 9 contains key pairs (ID=exon01), separated by semi-colons ";".
 - ID - Feature name.
 - PARENT- Meta-feature name.
 
 ---
 
-### Genomic Variants
-- Variant Call Format (VCF)
-- Mutation Annotation Format (MAF)
+## Genomic Variants
+- Variant Call Format (VCF).
+- Mutation Annotation Format (MAF).
 
 ---
-### Variant Call Format
+## Variant Call Format
 Variant Call Format ([VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)) is a text file format (most likely stored in a compressed manner). It contains 
 
-- meta-information lines
-- a header line
-- data lines each containing information about a position in the genome 
+- meta-information lines.
+- a header line.
+- data lines each containing information about a position in the genome .
 
 ***The format also has the ability to contain genotype information on samples for each position***.
 
 ---
-### VCF Structure
+## VCF Structure
 <div align="center">
 <img src="imgs/Picture1.png" alt="datasetSource" height="460" width="900">
 </div>
 
 ---
 
-### Mutation Annotation Format (MAF)
+## Mutation Annotation Format (MAF)
 Mutation Annotation Format ([MAF](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/)) is a tab-delimited text file with aggregated **mutation information** from VCF files.
 
 ---
-### MAF Structure
+## MAF Structure
 <div align="center">
 <img src="imgs/Picture2.png" alt="datasetSource" height="300" width="800">
 </div>
 
-
-
-
-```{r,results='asis',include=TRUE,echo=FALSE}
-if(params$isSlides == "yes"){
-  cat("---
+---
 class: inverse, center, middle
 
-# Genomic Files for computing .
-
+# Genomic Files for computing
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-"    
-  )
-}else{
-  cat("---
-
-## Genomic Files for computing .
-
----
-"    
-  )
-  
-}
-```
-
-### bigWig, bigBED and TABIX
+## bigWig, bigBED and TABIX
 
 - Many programs and browsers deal better with compressed, indexed versions of genomic files
     - SAM -> BAM (.bam and index file of .bai)
@@ -532,8 +399,6 @@ class: inverse, center, middle
     - BED -> bigBed (.bb)
     - BED, VCF and GFF -> (.gz and index file of .tbi)
 
-
- 
 ---
 ## Getting help and more information
 - UCSC file formats
@@ -544,8 +409,3 @@ class: inverse, center, middle
 
 - Sanger (GFF)
     - https://www.sanger.ac.uk/resources/software/gff/spec.html   
----
-
-<!-- <div align="center"> -->
-<!-- <img src="imgs/fastq.png" alt="igv" height="400" width="600"> -->
-<!-- </div> -->

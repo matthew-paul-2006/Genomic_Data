@@ -14,10 +14,15 @@ class: center, middle, inverse, title-slide
 
 # Reference Genomes and Common Genomics File Formats
 ### Rockefeller University, Bioinformatics Resource Centre
-### <a href="http://rockefelleruniversity.github.io/Plotting_In_R/" class="uri">http://rockefelleruniversity.github.io/Plotting_In_R/</a>
+### <a href="https://rockefelleruniversity.github.io/Genomic_Data/" class="uri">https://rockefelleruniversity.github.io/Genomic_Data/</a>
 
 ---
 
+
+
+# Genomics Data
+
+---
 ## Overview
 
 - Reference genomes and GRC.
@@ -35,7 +40,7 @@ class: inverse, center, middle
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
-## Are there we there yet?
+## Are we there yet?
 
 - The human genome isnt complete! 
 - In fact, most model organisms's reference genomes are being regularly updated.
@@ -43,12 +48,12 @@ class: inverse, center, middle
 - Major revisions to assembies result in change of co-ordinates.
 - Requires conversion between revisions.
 - The latest genome assembly for humans is GRCh38.
-- Patches add information to the assembly without disrupting the chromosome coordinates . i.e GRCh38.p3
+- Patches add information to the assembly without disrupting the chromosome coordinates i.e GRCh38.p3
 
 ---
-## Genome Reference Consortium.
+## Genome Reference Consortium
 
-- GRC is collaboration of institutes which curate and maintain the reference genomes for 3 model organims.
+- GRC is collaboration of institutes which curate and maintain the reference genomes for 3 model organisms.
     - Human - GRCh38.p3
     - Mouse - GRCm38.p3
     - Zebrafish - GRCz10
@@ -56,7 +61,7 @@ class: inverse, center, middle
     - Drosophila - Berkeley Drosophila Genome Project, BDGP36
 
 ---
-## Why do we need to know about reference genomes
+## Why do we need reference genomes?
 - Allows for genes and genomic features to be evaluated in their linear genomic context.
     - Gene A is close to Gene B
     - Gene A and Gene B are within feature C.
@@ -84,7 +89,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-# High-throughput Sequencing formats.
+# High-throughput Sequencing formats
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
@@ -145,12 +150,12 @@ class: inverse, center, middle
  &lt;div align="center"&gt;
 &lt;img src="imgs/sam1.png" alt="igv" height="400" width="400"&gt;
 &lt;/div&gt;
-]
+  ]
 .pull-right[
 - SAM header contains information on alignment and contigs used.
     - @HD - Version number and sorting information
     - @SQ - Contig/Chromosome name and length of sequence.
-]
+  ]
 ---
 
 ## Aligned sequences
@@ -204,7 +209,6 @@ class: inverse, center, middle
 - Paired read position and insert size
 - User defined flags.
 
-class: inverse, center, middle
 
 # Summarised Genomic Features formats.
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
@@ -214,10 +218,10 @@ class: inverse, center, middle
 - Post alignment, sequences reads are typically summarised into scores over/within genomic intervals.
     - BED - Genomic intervals and information.
     - Wiggle/BedGraph - Genomic intervals and scores.
-    - GFF - Genomic annotation with information and scores
+    - GFF - Genomic annotation with information and scores.
 
 ---
-## Summarising in genomic intervals.
+## Summarising in genomic intervals
 
 ** BED format (BED) **
 
@@ -225,12 +229,12 @@ class: inverse, center, middle
 &lt;img src="imgs/BED3.png" alt="igv" height="200" width="400"&gt;
 &lt;/div&gt;
 
-- Simple format
-- 3 tab separated columns
-- Chromsome, start, end
+- Simple format.
+- 3 tab separated columns.
+- Chromsome, start, end.
 
 ---
-## Summarising in genomic intervals.
+## Summarising in genomic intervals
 
 ** BED format (BED6) **
 
@@ -238,20 +242,20 @@ class: inverse, center, middle
 &lt;img src="imgs/bed6.png" alt="igv" height="200" width="400"&gt;
 &lt;/div&gt;
 
-- Chromosome, start, end
-- Identifier
-- Score
-- Strand ("." for strandless)
+- Chromosome, start, end.
+- Identifier.
+- Score.
+- Strand ("." for strandless).
  
 
 ---
-## Summarising in genomic intervals.
+## Summarising in genomic intervals
 ** narrowPeak and broadPeak**
 
 - narrowPeak and broadPeak are extensions to BED6 used in Encode's peak calling.
 - Contains p-values, q-values.
-- narrowPeak - BED 6+4
-- broadPeak - BED6+3
+- narrowPeak - BED 6+4.
+- broadPeak - BED6+3.
 
 ---
 ## Signal at genomic positions
@@ -268,14 +272,14 @@ class: inverse, center, middle
  &lt;div align="center"&gt;
 &lt;img src="imgs/wiggle.png" alt="igv" height="400" width="400"&gt;
 &lt;/div&gt;
-]
+  ]
 .pull-right[
-- Information line
-    - Chromosome
-    - Step size
-- Step start position
-- Score
-]
+- Information line.
+    - Chromosome.
+    - Step size.
+- Step start position.
+- Score.
+  ]
 
 ---
 ## Signal at genomic positions
@@ -286,14 +290,14 @@ class: inverse, center, middle
  &lt;div align="center"&gt;
 &lt;img src="imgs/bedgraph3.png" alt="igv" height="250" width="400"&gt;
 &lt;/div&gt;
-]
+  ]
 .pull-right[
 - BED 3 format
     - Chromosome
     - Start 
     - End
 4th column - Score
-]
+  ]
 
 ---
 class: inverse, center, middle
@@ -304,7 +308,7 @@ class: inverse, center, middle
 ---
 ## Genomic Annotation
 
-**GFF**
+**GFF: General Feature Format**
 
  &lt;div align="center"&gt;
 &lt;img src="imgs/gff.png" alt="igv" height="150" width="700"&gt;
@@ -320,10 +324,10 @@ class: inverse, center, middle
 &lt;img src="imgs/gff2.png" alt="igv" height="150" width="700"&gt;
 &lt;/div&gt;
 
-- Chromosome
-- Start of feature
-- End of Feature
-- Strand
+- Chromosome.
+- Start of feature.
+- End of Feature.
+- Strand.
 
 ---
 ## Genomic Annotation
@@ -332,9 +336,9 @@ class: inverse, center, middle
 &lt;img src="imgs/gff3.png" alt="igv" height="150" width="700"&gt;
 &lt;/div&gt;
 
-- Source
-- Feature type
-- Score
+- Source.
+- Feature type.
+- Score.
 
 ---
 ## Genomic Annotation
@@ -343,23 +347,23 @@ class: inverse, center, middle
 &lt;img src="imgs/gff4.png" alt="igv" height="150" width="700"&gt;
 &lt;/div&gt;
 
-- Column 9 contains key pairs (ID=exon01), separated by semi-colons ";"
+- Column 9 contains key pairs (ID=exon01), separated by semi-colons ";".
 - ID - Feature name.
 - PARENT- Meta-feature name.
 
 ---
 
 ## Genomic Variants
-- Variant Call Format (VCF)
-- Mutation Annotation Format (MAF)
+- Variant Call Format (VCF).
+- Mutation Annotation Format (MAF).
 
 ---
 ## Variant Call Format
 Variant Call Format ([VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)) is a text file format (most likely stored in a compressed manner). It contains 
 
-- meta-information lines
-- a header line
-- data lines each containing information about a position in the genome 
+- meta-information lines.
+- a header line.
+- data lines each containing information about a position in the genome .
 
 ***The format also has the ability to contain genotype information on samples for each position***.
 
@@ -383,7 +387,7 @@ Mutation Annotation Format ([MAF](https://docs.gdc.cancer.gov/Data/File_Formats/
 ---
 class: inverse, center, middle
 
-# Genomic Files for computing .
+# Genomic Files for computing
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
@@ -395,8 +399,6 @@ class: inverse, center, middle
     - BED -&gt; bigBed (.bb)
     - BED, VCF and GFF -&gt; (.gz and index file of .tbi)
 
-
- 
 ---
 ## Getting help and more information
 - UCSC file formats
@@ -406,12 +408,7 @@ class: inverse, center, middle
     - https://www.broadinstitute.org/igv/FileFormats
 
 - Sanger (GFF)
-    - https://www.sanger.ac.uk/resources/software/gff/spec.html   
----
-
-&lt;!-- &lt;div align="center"&gt; --&gt;
-&lt;!-- &lt;img src="imgs/fastq.png" alt="igv" height="400" width="600"&gt; --&gt;
-&lt;!-- &lt;/div&gt; --&gt;
+    - https://www.sanger.ac.uk/resources/software/gff/spec.html
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -461,30 +458,20 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 })();
 (function() {
   "use strict"
-  /* Replace <script> tags in slides area to make them executable
-   *
-   * Runs after post-processing of markdown source into slides and replaces only
-   * <script>s on the last slide of continued slides using the .has-continuation
-   * class added by xaringan. Finally, any <script>s in the slides area that
-   * aren't executed are commented out.
-   */
+  // Replace <script> tags in slides area to make them executable
   var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+    '.remark-slides-area .remark-slide-container script'
   );
   if (!scripts.length) return;
   for (var i = 0; i < scripts.length; i++) {
     var s = document.createElement('script');
     var code = document.createTextNode(scripts[i].textContent);
     s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
     scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-  var scriptsNotExecuted = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container.has-continuation script'
-  );
-  if (!scriptsNotExecuted.length) return;
-  for (var i = 0; i < scriptsNotExecuted.length; i++) {
-    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
-    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
   }
 })();
 (function() {
