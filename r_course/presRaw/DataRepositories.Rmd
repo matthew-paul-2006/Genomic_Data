@@ -1,7 +1,7 @@
 ---
 title: "Genomics Data Repositories"
 author: "Rockefeller University, Bioinformatics Resource Centre"
-date: "http://rockefelleruniversity.github.io/Plotting_In_R/"
+date: "https://rockefelleruniversity.github.io/Genomic_Data/"
 output: 
   xaringan::moon_reader:
     css: ["default", "metropolisCustom.css", "metropolis-fontsCustom.css"]
@@ -18,8 +18,6 @@ output:
     theme: united  # many options for theme, this one is my favorite.
     highlight: tango  # specifies the syntax highlighting style
 
-
-
 ---
 
 
@@ -30,6 +28,7 @@ AsSlides <- TRUE
 
 # Data Repositories
 
+---
 ## Getting hold of HTS data
 - From public repositories.
 - From collaborators.
@@ -120,13 +119,13 @@ class: inverse, center, middle
   ]
 
 
----
+<!-- --- -->
 
-## European Nucleotide Archive
+<!-- ## European Nucleotide Archive -->
 
-- ENA (https://www.ebi.ac.uk/ena)
+<!-- - ENA (https://www.ebi.ac.uk/ena) -->
 
-<iframe width="100%" height= "80%" src="https://www.ebi.ac.uk/ena"></iframe>
+<!-- <iframe width="100%" height= "80%" src="https://www.ebi.ac.uk/ena/browser/home"></iframe> -->
 
 
 ---
@@ -134,22 +133,22 @@ class: inverse, center, middle
 ## Other Repositories
 .pull-left[
 <img src="imgs/encode.png" alt="igv" height="500" width="400">
-
-]
+  ]
+  
 .pull-right[
 - Many repositories contain processed or unprocessed data.
 - These typically are the result or a consortium's data release policies.
-- Good example is Encode site. 
+- Good example is ENCODE site. 
     - (https://www.encodeproject.org/)
 - UCSC has many useful links to genomics data in various formats.
     - (http://hgdownload.soe.ucsc.edu/downloads.html)
-]
+  ]
 
 ---
 
-## Encode Portal
+## ENCODE Portal
 
-Encode portal provides access to raw and processed/standardised results.
+ENCODE portal provides access to raw and processed/standardised results.
 
 <iframe width="100%" height= "80%" src="https://www.encodeproject.org"></iframe>
 
@@ -161,20 +160,20 @@ Encode portal provides access to raw and processed/standardised results.
 <img src="imgs/recount2.png" alt="igv" height="300" width="400">
 <img src="imgs/ExprAtlas.png" alt="igv" height="300" width="400">
 
-]
+  ]
 .pull-right[
 - Other specialist repositories exist.
 - [ReCount2](https://jhubiostatistics.shinyapps.io/recount/) database provides standardised counts for user analysis.
 - Other databases like Immgen/Bodymap/[expression atlas](https://www.ebi.ac.uk/gxa/home) provide RNAseq for specific cells/tissues.
-]
+  ]
 
 ---
 
 ##  Reference data
 - Reference Genome available from many locations.
-- Different assemblies
-    - Major Revisisons - Change locations
-    - Minor Revisions - Update annotation
+- Different assemblies.
+    - Major Revisisons - Change locations.
+    - Minor Revisions - Update annotation.
 - Genome sequence stored as FASTA.
 - Gene build as GFF3 or GTF.
 - [IGenomes](https://support.illumina.com/sequencing/sequencing_software/igenome.html) contains full annotation files for many genomes.

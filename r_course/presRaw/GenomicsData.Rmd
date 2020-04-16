@@ -1,7 +1,7 @@
 ---
 title: "Reference Genomes and Common Genomics File Formats"
 author: "Rockefeller University, Bioinformatics Resource Centre"
-date: "http://rockefelleruniversity.github.io/Plotting_In_R/"
+date: "https://rockefelleruniversity.github.io/Genomic_Data/"
 output: 
   xaringan::moon_reader:
     css: ["default", "metropolisCustom.css", "metropolis-fontsCustom.css"]
@@ -17,11 +17,9 @@ output:
     number_sections: false  ## if you want number sections at each table header
     theme: united  # many options for theme, this one is my favorite.
     highlight: tango  # specifies the syntax highlighting style
-
-
-
-
 ---
+
+
 # Genomics Data
 
 ---
@@ -42,7 +40,7 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-## Are there we there yet?
+## Are we there yet?
 
 - The human genome isnt complete! 
 - In fact, most model organisms's reference genomes are being regularly updated.
@@ -251,7 +249,7 @@ class: inverse, center, middle
  
 
 ---
-## Summarising in genomic intervals.
+## Summarising in genomic intervals
 ** narrowPeak and broadPeak**
 
 - narrowPeak and broadPeak are extensions to BED6 used in Encode's peak calling.
