@@ -17,12 +17,26 @@ output:
     number_sections: false  ## if you want number sections at each table header
     theme: united  # many options for theme, this one is my favorite.
     highlight: tango  # specifies the syntax highlighting style
+params:
+  isSlides: "no"
 ---
+```{r setup, include=FALSE}
+suppressPackageStartupMessages(require(knitr))
+knitr::opts_chunk$set(echo = TRUE, tidy = T)
+```
 
-
-# Genomics Data
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides != "yes"){
+  cat("# Plotting in R
 
 ---
+"    
+  )
+  
+}
+
+```
+
 ## Overview
 
 - Reference genomes and GRC.
@@ -34,12 +48,27 @@ output:
 - VCF and MAF (Genomic variations).
 
 ---
-class: inverse, center, middle
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("class: inverse, center, middle
 
 # Reference Genomes
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
+"    
+  )
+}else{
+  cat("# Reference Genomes
+
+---
+"    
+  )
+  
+}
+
+```
 ## Are we there yet?
 
 - The human genome isnt complete! 
@@ -87,13 +116,28 @@ class: inverse, center, middle
 
 
 ---
-class: inverse, center, middle
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("class: inverse, center, middle
 
-# High-throughput Sequencing formats
+# High-Throughput Sequencing Formats
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-## High-throughput Sequencing formats
+"    
+  )
+}else{
+  cat("# High-Throughput Sequencing Formats
+
+---
+"    
+  )
+  
+}
+
+```
+## High-Throughput Sequencing Formats
 
 - Unaligned sequence files generated from HTS machines are mapped to a reference genome to produce aligned sequence files.
     - FASTQ - Unaligned sequences 
@@ -210,11 +254,31 @@ class: inverse, center, middle
 - User defined flags.
 
 
-# Summarised Genomic Features formats.
+---
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("class: inverse, center, middle
+
+# Summarized Genomic Feature Formats
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
-## Summarised Genomic Features formats
+"    
+  )
+}else{
+  cat("# Summarized Genomic Feature Formats
+
+---
+"    
+  )
+  
+}
+
+```
+
+---
+## Summarised Genomic Features Formats
 - Post alignment, sequences reads are typically summarised into scores over/within genomic intervals.
     - BED - Genomic intervals and information.
     - Wiggle/BedGraph - Genomic intervals and scores.
@@ -300,12 +364,27 @@ class: inverse, center, middle
   ]
 
 ---
-class: inverse, center, middle
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("class: inverse, center, middle
 
-# Genomic Annotation.
+# Genomic Annotation
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
+"    
+  )
+}else{
+  cat("# Genomic Annotation
+
+---
+"    
+  )
+  
+}
+
+```
 ## Genomic Annotation
 
 **GFF: General Feature Format**
@@ -385,12 +464,27 @@ Mutation Annotation Format ([MAF](https://docs.gdc.cancer.gov/Data/File_Formats/
 </div>
 
 ---
-class: inverse, center, middle
+```{r, results='asis',include=TRUE,echo=FALSE}
+if(params$isSlides == "yes"){
+  cat("class: inverse, center, middle
 
-# Genomic Files for computing
+# Genomic Files for Computing
+
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 ---
+"    
+  )
+}else{
+  cat("# Genomic Files for Computing
+
+---
+"    
+  )
+  
+}
+
+```
 ## bigWig, bigBED and TABIX
 
 - Many programs and browsers deal better with compressed, indexed versions of genomic files
