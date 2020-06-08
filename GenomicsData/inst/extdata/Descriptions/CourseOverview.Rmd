@@ -1,0 +1,12 @@
+## Course Overview
+
+<br>
+[<img src="https://github.com/RockefellerUniversity/Genomic_Datay/workflows/R-CMD-check-bioc/badge.svg">](https://github.com/RockefellerUniversity/Genomic_Data/actions?query=workflow%3AR-CMD-check-bioc)
+
+This course introduces typical genomic file formats from high-throughput sequencing data.
+
+The course consists of 2 sections and should be pre-requisite to ChIP-seq or RNA-seq courses. The 1st section outlines the common data formats used in the analysis of genomics data. The 2nd section is an overview of public repositories that store published data.  
+
+Course material and exercises are available to view as rendered HTML at http://rockefelleruniversity.github.io/Genomic_Data/.
+All material is available to download under GPL v3 license.
+

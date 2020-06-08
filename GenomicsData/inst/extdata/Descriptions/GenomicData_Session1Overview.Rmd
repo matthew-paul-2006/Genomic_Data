@@ -1,0 +1,10 @@
+<br>
+
+#### **Genomic Data Formats**
+
+This section focuses on the file formats commonly used in genomics analysis and what they used for:
+
+* Reference Genomes
+* Sequences
+* Summary Data
+
