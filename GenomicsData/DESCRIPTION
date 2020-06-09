@@ -9,23 +9,3 @@ Description: Course for understanding Genomics Data
 License: What license is it under?
 Depends: ggplot2
 RoxygenNote: 6.0.1
-
-
-Package: GenomicsData
-Type: Package
-Title: Genomics Data
-Version: 0.1.0
-Author: Ji-Dung Luo, Matt Paul, Wei Wang, Doug Barrows and Thomas Carroll.
-Maintainer: Thomas Carroll <tc.infomatics@gmail>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
-LazyData: TRUE
-biocViews: Training
-Depends: methods, rmarkdown, rio
-Suggests: knitr,
-    rmarkdown,
-    testthat,
-    yaml
-SystemRequirements:
-VignetteBuilder: knitr
-RoxygenNote: 6.0.1
